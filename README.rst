@@ -85,6 +85,17 @@ abbreviations:
 
 See the source code for full details.
 
+Running Tests
+=============
+
+Running the tests you need to do the following:
+
+* pip install -e
+
+* pip install `Django`
+
+* `which django_admin.py` test django_localflavor_us --settings=django_localflavor_us.tests.test_setting
+
 About localflavors
 ==================
 
