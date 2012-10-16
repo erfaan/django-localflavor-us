@@ -90,7 +90,7 @@ Running Tests
 
 Running the tests you need to do the following:
 
-* pip install -e
+* pip install -e .
 
 * pip install `Django`
 
