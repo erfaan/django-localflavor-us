@@ -3,12 +3,15 @@ from django.db.models.fields import CharField
 from django.contrib.localflavor.us.us_states import STATE_CHOICES
 from django.contrib.localflavor.us.us_states import USPS_CHOICES
 
+from model_utils import Choices
+
+
 class USStateField(CharField):
 
     description = _("U.S. state (two uppercase letters)")
 
     def __init__(self, *args, **kwargs):
-        kwargs['choices'] = STATE_CHOICES
+        kwargs['choices'] = Choices(*STATE_CHOICES)
         kwargs['max_length'] = 2
         super(USStateField, self).__init__(*args, **kwargs)
 
@@ -17,7 +20,7 @@ class USPostalCodeField(CharField):
     description = _("U.S. postal code (two uppercase letters)")
 
     def __init__(self, *args, **kwargs):
-        kwargs['choices'] = USPS_CHOICES
+        kwargs['choices'] = Choices(*USPS_CHOICES)
         kwargs['max_length'] = 2
         super(USPostalCodeField, self).__init__(*args, **kwargs)
 
